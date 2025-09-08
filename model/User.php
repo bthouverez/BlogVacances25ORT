@@ -10,8 +10,7 @@ class User {
 
 
 	# constructeur (unique en PHP)
-	public function __construct($id = 0, $name = "", 
-		$mail = "", $password="") {
+	public function __construct(int $id = 0, string $name = "", string $mail = "", string $password="") {
 		$this->id = $id;
 		$this->name = $name;
 		$this->mail = $mail;
