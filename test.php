@@ -1,7 +1,9 @@
 <?php
 
 require_once('model/User.php');
-
+require_once('model/UserDAO.php');
+require_once('model/ArticleDAO.php');
+/*
 $u = new User();
 echo $u;
 echo '<br>';
@@ -29,3 +31,19 @@ $u->pouet = "coucouloulou";
 #$u->__set('pouet', 42);
 echo $u;
 echo '<br>';
+*/
+
+// $dao = new UserDAO();
+//$user = $dao->find(132);
+//echo $user;
+//var_dump($user);
+
+// $users = $dao->findAll();
+// var_dump($users);
+
+$daoArticle = new ArticleDAO();
+//$a = $daoArticle->find(2);
+//var_dump($a);
+
+$articles = $daoArticle->findAll();
+var_dump($articles);
