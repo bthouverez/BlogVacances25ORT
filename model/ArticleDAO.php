@@ -54,4 +54,28 @@ class ArticleDAO {
 		return $tab;
 	}
 
+	public function checkUser($username, $password) {
+		// vérifier sur le username existe
+		// vérifier si les mdp correspondent
+		// si tout est ok, on rentre l'utilisateur dans la session
+	}
+
+	public function create(string $title, string $content, string $picture) {
+		$sql = 'INSERT INTO articles VALUES (null, ?, NOW(), ?, ?, ?)';
+		$stmt = $this->bdd->prepare($sql);
+		$stmt->execute([$title, $picture, $content, $_SESSION['user_id']]);
+	}
+
+	public function delete(int $id) {
+		$sql = 'DELETE FROM articles WHERE id = ?';
+		$stmt = $this->bdd->prepare($sql);
+		$stmt->execute([$id]);
+	}
 }
+
+// create
+
+// delete
+
+?>
+
